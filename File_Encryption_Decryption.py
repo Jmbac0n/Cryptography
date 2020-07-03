@@ -50,8 +50,33 @@ def main():
 
     print("Select key to use: ")
     key_loc = input()
-    
+
     key = load_key(key_loc)
-    encrypt_file(file_loc, key)
+    
+
+    print("""\
+
+        Select an Option:
+
+        [1] Encrypt file
+        [2] Decrypt file
+        [3] Exit
+
+    """)
+
+    option = input()
+
+    if option == "1":
+        encrypt_file(file_loc, key)
+    if option == "2":
+        decrypt_file(file_loc, key)
+    if option == "3":
+        quit()
+    
 
 main()
+
+#TODO
+
+#Break down main into sub functions so that the user can decide to enter new file locations and keys or change them if incorrect
+#Tbf probably best to ask option first then encrypt/decrypt
